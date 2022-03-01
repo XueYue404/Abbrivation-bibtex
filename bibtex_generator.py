@@ -1,6 +1,4 @@
-import imp
 import pandas as pd
-import re
 import bibtexparser
 from tqdm import tqdm
 from bibtexparser.bwriter import BibTexWriter
