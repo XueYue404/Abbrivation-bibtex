@@ -6,7 +6,6 @@ from bibtexparser.bibdatabase import BibDatabase
 from bibtexparser.bparser import BibTexParser
 from bibtexparser.customization import  convert_to_unicode
 
-# 要去除的
 delete_items = [
     'issn',
     'doi',
@@ -39,11 +38,10 @@ def replace_content(text,abbr_df):
 def arxiv_check(entry):
     if 'journal' in entry:
         if 'arxiv' in entry['journal'].lower():
-            # 修改journal
+
             arxiv_num = "".join(list(filter(str.isdigit, entry['journal'])))
             entry['journal'] = f"arXiv:{arxiv_num[0:4]}.{arxiv_num[4:]}"
             ' '.join(entry['journal'].split())
-            # 最后加上一句
             entry['year'] = entry['year']+f". [Online]. Available: http://arxiv.org/abs/{arxiv_num[0:4]}.{arxiv_num[4:]}"
 
     return entry
@@ -62,19 +60,16 @@ if __name__ =="__main__":
                 if item in entry:
                     del entry[item]
             if 'journal' in entry:
-                # print(entry['journal'])
                 entry['journal'] = replace_content(entry['journal'],abbr_df)
             if 'booktitle' in entry:
-                # print(entry['booktitle'])
                 entry['booktitle'] = replace_content(entry['booktitle'],abbr_df)
             
             entry = arxiv_check(entry)
 
-    # print()
 
     writer = BibTexWriter()
-    writer.indent = '    '     # indent entries with 4 spaces instead of one
-    writer.comma_first = False  # place the comma at the beginning of the line
+    writer.indent = '    '
+    writer.comma_first = False
     with open('My Library.bib', 'w') as bibfile:
         bibfile.write(writer.write(bib_database))
 
