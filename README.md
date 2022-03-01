@@ -1,5 +1,5 @@
 # Abbrivation-bibtex
-A simple script for journal and conference name abbreviations in bibtex
+For Bibtex citations used in LaTex, I write a simple script to convert names of journals and conferences into abbreviations. Common abbreviations are found in the IEEE-reference-guide, but you can customize any abbreviation that you want by adding/modifying the excel file! ArXiv articals were treated specifically in the code.
 
 ## Dependency 
 1. pandas  
