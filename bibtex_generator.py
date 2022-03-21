@@ -8,21 +8,10 @@ from bibtexparser.customization import convert_to_unicode
 import argparse
 
 delete_items = [
-    'abstract',
-    'address',
     'annote',
-    'archiveprefix',
-    'doi',
-    'eprint',
-    'eprinttype',
+    'url',
+    'urldate',
     'file',
-    'isbn',
-    'issn',
-    'keywords',
-    'langid',
-    'month',
-    'publisher',
-    'shorttitle'
 ]
 
 
