@@ -9,5 +9,8 @@ For Bibtex citations used in LaTex, I wrote a simple script to convert names of 
 ## Usage
 0. Generate the .bib file using any document management tool, Zotero for example. 
 1. Put the excel file and the python script in the same folder, as well as your .bib file.  
-2. Change the name of .bib file in the python script, and run it. （It will overwrite the original .bib file）
+2. Run the script as: 
+```python 
+python bibtex_generator.py -i example.bib -o output.bib # -h for help
+```
 3. Enjoy!
